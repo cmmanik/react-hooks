@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import Jokes from './Jokes';
+import Story from './Story';
 
 function App() {
 
@@ -20,11 +22,13 @@ function App() {
   
   return (
     
-      <div className="container ">
+      <div className="container">
       <div className="form">
         <input type="text" value={serchQuery} onKeyPress={serchKeyPres} onChange={cngHandler} />
         <button onClick={serch}>Serch</button>
       </div>
+      <Jokes />
+      <Story/>
     </div>
   );
 }

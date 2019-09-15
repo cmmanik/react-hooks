@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Economica|Roboto+Condensed');
-
+.container {
+  text-align: center;
+}
 body {
   margin: 5%;
-  text-align: center;
+  text-align: center;;
   font-family: 'Roboto Condensed', sans-serif;
+  text-align: center
 }
 
 h1, h2, h3, h4, h5 {
