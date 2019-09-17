@@ -1,27 +1,10 @@
-import React,{useState, useEffect} from 'react';
-
-
-const fetchData = (url, initValue) => {
-
-    useEffect(() => {
-        fetch(url)
-    })
-}
+import React from 'react';
+import { useFetch } from './FetchData';
 
 const Jokes = () => {
 
-    const [Jokes, setJokes] = useState({})
-
-   useEffect(() => {
-        fetch('https://official-joke-api.appspot.com/random_joke')
-            .then(response =>response.json())
-            .then(data => {
-                setJokes(data)
-            })
-   }, [])
-
-   console.log(Jokes)
-   const {setup, punchline} = Jokes;
+    const {setup, punchline} = useFetch('https://official-joke-api.appspot.com/random_joke',{})
+ 
    return (
        <div>
            <h1>wTf !! Jokes</h1>
