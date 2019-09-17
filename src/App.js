@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Jokes from './Jokes';
 import Story from './Story';
+import Tasks from './Tasks';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
         <button onClick={serch}>Serch</button>
       </div>
       <Jokes />
+      <Tasks/>
       <Story/>
     </div>
   );
