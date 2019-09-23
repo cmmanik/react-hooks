@@ -1,36 +1,41 @@
-import React, {useState} from 'react';
-import Jokes from './Jokes';
-import Story from './Story';
-import Tasks from './Tasks';
+import React, { useState } from "react";
+import Jokes from "./Jokes";
+import Stories from "./Stories";
 
 function App() {
+  const [serchQuery, setSerchQuery] = useState("");
 
-  const [serchQuery, setserchQuery] = useState('');
-  const cngHandler = event => {
-    setserchQuery(event.target.value)
-  }
-
-  const serch = () => {
-    window.open(`https://google.com/search?q=${serchQuery}`, '_blank')
-  }
-
-  const serchKeyPres = event => {
-    if(event.key === 'Enter') {
-      serch();
+  //hanlde serch query
+  const onchangehander = event => {
+    setSerchQuery(event.target.value);
+  };
+  // Hangle Serch
+  const serchHandle = () => {
+    window.open(`https://www.google.com/search?q=${serchQuery}`, "_blank");
+  };
+  // handle serch with Enter key
+  const handleKeyPress = keycode => {
+    if (keycode.key === "Enter") {
+      serchHandle();
     }
-  }
-
-  
+  };
   return (
-    
-      <div className="container">
+    <div className="container">
       <div className="form">
-        <input type="text" value={serchQuery} onKeyPress={serchKeyPres} onChange={cngHandler} />
-        <button onClick={serch}>Serch</button>
+        <input
+          type="text"
+          value={serchQuery}
+          onChange={onchangehander}
+          onKeyPress={handleKeyPress}
+        />
+        <button onClick={serchHandle}>Search</button>
       </div>
+
+      {/*Random Jokes  */}
       <Jokes />
-      <Tasks/>
-      <Story/>
+      <hr />
+      {/* Top Stories hacker Rank */}
+      <Stories />
     </div>
   );
 }

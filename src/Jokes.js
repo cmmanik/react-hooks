@@ -1,18 +1,19 @@
-import React from 'react';
-import { useFetch } from './FetchData';
+import React from "react";
+import FetchData from "./FetchData";
 
+const URL = "https://official-joke-api.appspot.com/jokes/random";
 const Jokes = () => {
+  const { punchline, setup } = FetchData(URL, {});
 
-    const {setup, punchline} = useFetch('https://official-joke-api.appspot.com/random_joke',{})
- 
-   return (
-       <div>
-           <h1>wTf !! Jokes</h1>
-           <h3>{setup}</h3>
-           <p><em>{punchline}</em></p>
-       </div>
-   )
-
+  return (
+    <div>
+      <h1>Jokes</h1>
+      <h3>{setup}</h3>
+      <p>
+        <em>{punchline}</em>
+      </p>
+    </div>
+  );
 };
 
 export default Jokes;
