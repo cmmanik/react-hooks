@@ -15,5 +15,4 @@ const Jokes = () => {
     </div>
   );
 };
-
 export default Jokes;
